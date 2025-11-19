@@ -7,8 +7,13 @@ import swagger from '../swagger.json';
 import { AppDataSource } from './data-source';
 import { archetypesRouter } from './routes/archetypes.routes';
 import { entitiesRouter } from './routes/entities.routes';
+import cors from 'cors';
 
 const app: Express = express();
+
+app.use(cors({
+  origin: '*',
+}));
 
 // Middleware para parsear JSON do body
 app.use(express.json());
